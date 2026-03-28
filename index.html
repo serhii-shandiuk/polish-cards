@@ -260,7 +260,7 @@ function updateFilteredWords(){let l=words.map(w=>({...w}));if(currentFilter==='
 
 function renderCard(){const fc=document.getElementById('flashcard');fc.classList.remove('flip');if(!filteredWords.length){document.getElementById('flashcardContainer').style.display='none';document.getElementById('controls').style.display='none';document.getElementById('cardCounter').innerHTML=currentFilter==='known'?'<div class="es"><div class="ej">📚</div><p>Немає вивчених</p></div>':currentFilter==='new'?'<div class="es"><div class="ej">🎉</div><p>Все вивчено!</p></div>':'<div class="es"><div class="ej">🔍</div><p>Не знайдено</p></div>';return}document.getElementById('flashcardContainer').style.display='';document.getElementById('controls').style.display='';const w=filteredWords[currentIndex];document.getElementById('frontWord').textContent=w.word;document.getElementById('frontTranscript').textContent=w.transcription?'['+w.transcription+']':'';document.getElementById('backTranslation').textContent=w.translation;document.getElementById('backWord').textContent=w.word;document.getElementById('backTranscript').textContent=w.transcription?'['+w.transcription+']':'';document.getElementById('cardCounter').textContent=(currentIndex+1)+' / '+filteredWords.length}
 
-function flipCard(){document.getElementById('flashcard').classList.toggle('flip')}
+function flipCard(){const fc=document.getElementById('flashcard');fc.style.transform='';fc.style.opacity='';fc.style.transition='';fc.classList.toggle('flip')}
 function nextOnly(){if(!filteredWords.length)return;currentIndex=(currentIndex+1)%filteredWords.length;renderCard()}
 
 function nextCard(){if(!filteredWords.length)return;const w=filteredWords[currentIndex];if(currentFilter==='known'){known.delete(w.id);saveProgress();updateStats();filteredWords.splice(currentIndex,1);if(!filteredWords.length)currentIndex=0;else if(currentIndex>=filteredWords.length)currentIndex=0}else if(currentFilter==='all'&&known.has(w.id)){known.delete(w.id);saveProgress();updateStats();currentIndex=(currentIndex+1)%filteredWords.length}else{currentIndex=(currentIndex+1)%filteredWords.length}renderCard()}
@@ -359,7 +359,7 @@ function init(){
       fc.style.transition='transform .2s ease, opacity .2s ease';
       fc.style.transform=base;
       fc.style.opacity='1';
-      setTimeout(()=>{fc.style.transition='';fc.style.transform=base||''},200);
+      setTimeout(()=>{fc.style.transition='';fc.style.transform='';fc.style.opacity=''},220);
     }
   },{passive:true});
 
