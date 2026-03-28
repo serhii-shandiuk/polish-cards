@@ -1,24 +1,14 @@
 {
-  "name": "Польські слова — Флешкартки",
+  "name": "Польські картки",
   "short_name": "PL Картки",
   "description": "Вивчай польські слова з флешкартками",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#f5f0e8",
-  "theme_color": "#fffdf7",
+  "background_color": "#e8ecf0",
+  "theme_color": "#e8ecf0",
   "orientation": "portrait",
   "icons": [
-    {
-      "src": "icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
+    {"src": "icon-192x192.png","sizes": "192x192","type": "image/png","purpose": "any maskable"},
+    {"src": "icon-512x512.png","sizes": "512x512","type": "image/png","purpose": "any maskable"}
   ]
 }
