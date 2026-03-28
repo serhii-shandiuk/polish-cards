@@ -11,119 +11,367 @@
 <title>PL Картки</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-:root{--bg:#e8ecf0;--glass:rgba(255,255,255,0.55);--glass-strong:rgba(255,255,255,0.72);--glass-border:rgba(255,255,255,0.45);--text:#1a1a1e;--text2:#6e6e7a;--accent:#007aff;--red:#ff3b30;--green:#34c759;--shadow-glass:0 2px 16px rgba(0,0,0,0.06),0 0 1px rgba(0,0,0,0.08),inset 0 1px 0 rgba(255,255,255,0.5);--shadow-card:0 8px 32px rgba(0,0,0,0.08),0 2px 8px rgba(0,0,0,0.04),inset 0 1px 0 rgba(255,255,255,0.6);--r:22px;--r-sm:16px;--r-pill:100px;--safe-top:env(safe-area-inset-top,0px);--safe-bottom:env(safe-area-inset-bottom,0px);--blur:20px}
+:root{
+  --bg:#e8ecf0;--glass:rgba(255,255,255,0.55);--glass2:rgba(255,255,255,0.72);
+  --text:#1a1a1e;--text2:#6e6e7a;--accent:#007aff;--red:#ff3b30;--green:#34c759;
+  --sh:0 2px 16px rgba(0,0,0,0.06),0 0 1px rgba(0,0,0,0.08),inset 0 1px 0 rgba(255,255,255,0.5);
+  --sh2:0 8px 32px rgba(0,0,0,0.08),0 2px 8px rgba(0,0,0,0.04),inset 0 1px 0 rgba(255,255,255,0.6);
+  --pill:100px;--blur:20px;
+  --safe-t:env(safe-area-inset-top,0px);--safe-b:env(safe-area-inset-bottom,0px);
+}
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{height:100%;overflow:hidden}
-body{font-family:'Inter',-apple-system,system-ui,sans-serif;background:var(--bg);color:var(--text);height:100dvh;height:100%;line-height:1.45;overflow:hidden;overscroll-behavior:none;-webkit-font-smoothing:antialiased}
-.shell{display:flex;flex-direction:column;height:100dvh;height:100%;padding-top:var(--safe-top);padding-bottom:var(--safe-bottom)}
-.bar{display:flex;align-items:center;justify-content:center;padding:.55rem .8rem;background:var(--glass-strong);backdrop-filter:blur(var(--blur));-webkit-backdrop-filter:blur(var(--blur));border-bottom:.5px solid var(--glass-border);flex-shrink:0}
-.bar h1{font-size:1.05rem;font-weight:700;letter-spacing:-.02em}
-.chips{display:flex;align-items:center;gap:.4rem;padding:.5rem .8rem;flex-shrink:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-.chips::-webkit-scrollbar{display:none}
-.chip{flex-shrink:0;padding:.4rem .85rem;border:none;border-radius:var(--r-pill);background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:var(--shadow-glass);color:var(--text2);font-family:inherit;font-size:.82rem;font-weight:500;white-space:nowrap;-webkit-appearance:none;touch-action:manipulation;transition:all .2s}
-.chip:active{transform:scale(.95);opacity:.8}
-.chip.on{background:var(--accent);color:#fff;box-shadow:0 2px 12px rgba(0,122,255,.25),inset 0 1px 0 rgba(255,255,255,.2)}
-.chip-add{flex-shrink:0;padding:.4rem .75rem;border:1.5px dashed rgba(0,0,0,.12);border-radius:var(--r-pill);background:transparent;color:var(--text2);font-family:inherit;font-size:.82rem;font-weight:500;white-space:nowrap;-webkit-appearance:none;touch-action:manipulation}
-.chip-add:active{opacity:.6}
+html,body{height:100%;overflow:hidden}
+body{font-family:'Inter',-apple-system,system-ui,sans-serif;background:var(--bg);color:var(--text);height:100dvh;overflow:hidden;overscroll-behavior:none;-webkit-font-smoothing:antialiased}
+
+/* === SHELL === */
+.shell{display:flex;flex-direction:column;height:100dvh;height:100%;padding-top:var(--safe-t);padding-bottom:var(--safe-b)}
+
+/* === HEADER === */
+.hdr{display:flex;align-items:center;justify-content:center;padding:.5rem .8rem;background:var(--glass2);backdrop-filter:blur(var(--blur));-webkit-backdrop-filter:blur(var(--blur));border-bottom:.5px solid rgba(255,255,255,.45);flex-shrink:0}
+.hdr h1{font-size:1.05rem;font-weight:700;letter-spacing:-.02em}
+
+/* === CHIPS === */
+.sel-bar{display:flex;align-items:center;gap:.5rem;padding:.45rem .8rem;flex-shrink:0}
+
+
+
+
+
+
+
+.file-select{flex:1;padding:.45rem .8rem;border:none;border-radius:14px;background-color:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:var(--sh);font-family:inherit;font-size:.88rem;font-weight:500;color:var(--text);-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236e6e7a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .8rem center;padding-right:2rem;touch-action:manipulation}
+.file-select:focus{outline:none;box-shadow:var(--sh),0 0 0 2px rgba(0,122,255,.3)}
+.upload-btn{flex-shrink:0;padding:.45rem .7rem;border:none;border-radius:14px;background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:var(--sh);color:var(--text2);font-family:inherit;font-size:.82rem;font-weight:500;-webkit-appearance:none;touch-action:manipulation}
+.upload-btn:active{opacity:.7}
 .file-input{display:none}
-.chip-load{font-size:.8rem;color:var(--text2);padding:0 .3rem}
+.chip-load{font-size:.8rem;color:var(--text2)}
+
+/* === WELCOME === */
 .welcome{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;gap:.6rem}
-.welcome-ico{width:72px;height:72px;border-radius:20px;background:var(--glass-strong);backdrop-filter:blur(var(--blur));-webkit-backdrop-filter:blur(var(--blur));box-shadow:var(--shadow-card);display:flex;align-items:center;justify-content:center;font-size:2rem;margin-bottom:.3rem}
+.welcome-ico{width:72px;height:72px;border-radius:20px;background:var(--glass2);backdrop-filter:blur(var(--blur));-webkit-backdrop-filter:blur(var(--blur));box-shadow:var(--sh2);display:flex;align-items:center;justify-content:center;font-size:2rem;margin-bottom:.3rem}
 .welcome h2{font-size:1.25rem;font-weight:700;letter-spacing:-.02em}
 .welcome p{color:var(--text2);font-size:.88rem;max-width:280px;line-height:1.5}
-.welcome-hint{margin-top:.8rem;display:flex;align-items:center;gap:.4rem;color:var(--accent);font-size:.82rem;font-weight:600}
+.whint{margin-top:.8rem;display:flex;align-items:center;gap:.4rem;color:var(--accent);font-size:.82rem;font-weight:600}
 .bounce{display:inline-block;animation:bu 1.2s ease infinite}
 @keyframes bu{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
-.stats{display:flex;justify-content:center;gap:.5rem;padding:.45rem .8rem;flex-shrink:0}
-.sp{display:flex;align-items:center;gap:.3rem;padding:.3rem .7rem;background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:var(--r-pill);box-shadow:var(--shadow-glass);font-size:.78rem}
-.sp .n{font-weight:700;font-size:.88rem}
-.sp .l{color:var(--text2);font-size:.7rem}
-.sp.g .n{color:var(--green)}
-.sp.r .n{color:var(--red)}
+
+/* === STATS === */
+.stats{display:flex;justify-content:center;gap:.4rem;padding:.3rem .8rem;flex-shrink:0}
+.sp{display:flex;align-items:center;gap:.25rem;padding:.25rem .6rem;background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:var(--pill);box-shadow:var(--sh);font-size:.75rem}
+.sp .n{font-weight:700;font-size:.85rem}
+.sp .l{color:var(--text2);font-size:.68rem}
+.sp.g .n{color:var(--green)}.sp.r .n{color:var(--red)}
 .pw{height:3px;background:rgba(0,0,0,.06);flex-shrink:0;margin:0 .8rem;border-radius:2px}
 .pf{height:100%;background:var(--green);transition:width .4s;border-radius:2px}
-.tb{padding:.5rem .8rem;flex-shrink:0;display:flex;flex-direction:column;gap:.45rem}
-.si{width:100%;padding:.55rem .9rem;border:none;border-radius:var(--r-sm);background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:var(--shadow-glass);font-family:inherit;font-size:16px;color:var(--text);outline:none;-webkit-appearance:none}
+
+/* === TOOLBAR === */
+.tb{padding:.4rem 1rem .3rem;flex-shrink:0;display:flex;flex-direction:column;gap:.3rem}
+.si{width:100%;padding:.42rem .8rem;border:none;border-radius:14px;background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:var(--sh);font-family:inherit;font-size:16px;color:var(--text);outline:none;-webkit-appearance:none}
 .si::placeholder{color:var(--text2)}
 .fr{display:flex;justify-content:center;gap:.3rem}
-.fp{padding:.3rem .85rem;border:none;border-radius:var(--r-pill);background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:var(--shadow-glass);color:var(--text2);font-family:inherit;font-size:.78rem;font-weight:500;-webkit-appearance:none;touch-action:manipulation;transition:all .2s}
+.fp{padding:.25rem .75rem;border:none;border-radius:var(--pill);background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:var(--sh);color:var(--text2);font-family:inherit;font-size:.76rem;font-weight:500;-webkit-appearance:none;touch-action:manipulation}
 .fp:active{transform:scale(.95)}
 .fp.on{background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(0,122,255,.2)}
-.ca{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:.3rem .8rem;min-height:0;overflow:hidden}
-.cc{font-size:.75rem;color:var(--text2);margin-bottom:.4rem;flex-shrink:0;font-weight:500}
-.fc{perspective:1000px;width:100%;max-width:400px;flex:1;max-height:230px;touch-action:pan-x}
-.fl{position:relative;width:100%;height:100%;transition:transform .45s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d}
-.fl.flip{transform:rotateY(180deg)}
-.cf{position:absolute;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--r);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.2rem;background:var(--glass-strong);backdrop-filter:blur(var(--blur));-webkit-backdrop-filter:blur(var(--blur));box-shadow:var(--shadow-card)}
+
+/* === MAIN CONTENT: card + controls === */
+.main-content{flex:1;display:flex;flex-direction:column;align-items:center;padding:.2rem 1rem 0;min-height:0;overflow:hidden}
+
+.cc{font-size:.72rem;color:var(--text2);font-weight:500;margin-bottom:.3rem}
+
+/* === FLASHCARD === */
+.fc-wrap{perspective:1000px;width:100%;max-width:400px;flex:1;min-height:0;touch-action:pan-x}
+.fc{position:relative;width:100%;height:100%;transition:transform .45s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d}
+.fc.flip{transform:rotateY(180deg)}
+.cf{position:absolute;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:22px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem;background:var(--glass2);backdrop-filter:blur(var(--blur));-webkit-backdrop-filter:blur(var(--blur));box-shadow:var(--sh2)}
 .cb{transform:rotateY(180deg)}
-.cw{font-size:2rem;font-weight:700;margin-bottom:.3rem;text-align:center;word-break:break-word;letter-spacing:-.03em}
-.ct{font-size:.95rem;color:var(--red);font-weight:600}
-.ch{font-size:.7rem;color:var(--text2);margin-top:auto;font-weight:500}
-.cv{font-size:1.7rem;font-weight:700;margin-bottom:.3rem;text-align:center;word-break:break-word;letter-spacing:-.02em}
-.cb .cw{font-size:1rem;color:var(--text2);font-weight:500;margin-bottom:.15rem}
-.cb .ct{font-size:.85rem}
-.ctrls{display:flex;align-items:center;justify-content:center;gap:.8rem;padding:.6rem 0;flex-shrink:0}
-.btn{width:52px;height:52px;border-radius:50%;border:none;background:var(--glass-strong);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:var(--shadow-glass);display:flex;align-items:center;justify-content:center;font-size:1.25rem;color:var(--text);-webkit-appearance:none;touch-action:manipulation;transition:transform .12s}
+.cw{font-size:2.2rem;font-weight:700;margin-bottom:.4rem;text-align:center;word-break:break-word;letter-spacing:-.03em}
+.ct{font-size:1rem;color:var(--red);font-weight:600}
+.ch{font-size:.72rem;color:var(--text2);margin-top:auto;font-weight:500}
+.cv{font-size:1.8rem;font-weight:700;margin-bottom:.3rem;text-align:center;word-break:break-word;letter-spacing:-.02em}
+.cb .cw{font-size:1.05rem;color:var(--text2);font-weight:500;margin-bottom:.15rem}
+.cb .ct{font-size:.88rem}
+
+/* === CONTROLS === */
+.ctrl-wrap{flex-shrink:0;display:flex;align-items:center;justify-content:center;padding:.8rem 0 .3rem}
+
+.action-row{display:flex;align-items:center;justify-content:center;gap:2.5rem}
+.nav-row{display:flex;align-items:center;justify-content:center;gap:1.2rem}
+
+.btn{border-radius:50%;border:none;background:var(--glass2);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:var(--sh);display:flex;align-items:center;justify-content:center;-webkit-appearance:none;touch-action:manipulation;transition:transform .12s}
 .btn:active{transform:scale(.88)}
+.btn-lg{width:64px;height:64px;font-size:1.5rem}
+.btn-sm{width:42px;height:42px;font-size:1rem}
 .btn.g{color:var(--green)}.btn.g:active{background:var(--green);color:#fff}
 .btn.r{color:var(--red)}.btn.r:active{background:var(--red);color:#fff}
 .btn.b{color:var(--accent)}.btn.b:active{background:var(--accent);color:#fff}
-.btn.m{color:var(--text2);font-size:1rem}
-.bb{display:flex;align-items:center;justify-content:center;padding:.3rem .8rem .5rem;flex-shrink:0}
-.rp{padding:.35rem .9rem;border:none;border-radius:var(--r-pill);background:rgba(255,59,48,.1);color:var(--red);font-family:inherit;font-size:.75rem;font-weight:600;-webkit-appearance:none;touch-action:manipulation}
+.btn.m{color:var(--text2)}
+
+/* === BOTTOM === */
+.bb{display:flex;align-items:center;justify-content:center;padding:.8rem .8rem 1rem;flex-shrink:0}
+.rp{padding:.3rem .8rem;border:none;border-radius:var(--pill);background:rgba(255,59,48,.1);color:var(--red);font-family:inherit;font-size:.72rem;font-weight:600;-webkit-appearance:none;touch-action:manipulation}
 .rp:active{background:var(--red);color:#fff}
-.kh{text-align:center;font-size:.65rem;color:var(--text2);flex-shrink:0;padding:.15rem}
-.kk{display:inline-block;padding:.05rem .3rem;background:var(--glass);border-radius:4px;font-family:monospace;font-size:.6rem;margin:0 .05rem}
-.es{text-align:center;padding:1.5rem;color:var(--text2)}.es .ej{font-size:2.5rem;margin-bottom:.4rem}.es p{font-size:.9rem;font-weight:500}
+
+.es{text-align:center;padding:2rem 1rem;color:var(--text2)}.es .ej{font-size:2.5rem;margin-bottom:.4rem}.es p{font-size:.9rem;font-weight:500}
 .hid{display:none!important}
-@media(hover:none)and(pointer:coarse){.kh{display:none}}
-@media(max-height:680px){.fc{max-height:155px}.cw{font-size:1.6rem}.cv{font-size:1.35rem}.ctrls{padding:.35rem 0;gap:.6rem}.btn{width:44px;height:44px;font-size:1.1rem}.tb{padding:.3rem .8rem;gap:.25rem}.stats{padding:.3rem .8rem}}
-@media(min-height:850px){.fc{max-height:280px}.cw{font-size:2.4rem}.cv{font-size:2rem}.btn{width:58px;height:58px;font-size:1.4rem}.ctrls{gap:1rem}}
-@media(min-width:768px){.fc{max-height:300px}.btn:hover{transform:scale(1.08);box-shadow:0 4px 16px rgba(0,0,0,.1)}.btn.g:hover{background:var(--green);color:#fff}.btn.r:hover{background:var(--red);color:#fff}.btn.b:hover{background:var(--accent);color:#fff}}
+
+/* === RESPONSIVE === */
+@media(max-height:700px){
+  .cw{font-size:1.8rem}.cv{font-size:1.5rem}
+  .btn-lg{width:54px;height:54px;font-size:1.3rem}
+  .btn-sm{width:36px;height:36px;font-size:.9rem}
+  .ctrl-wrap{gap:.7rem;padding:.5rem 0 .2rem}
+  .action-row{gap:2rem}
+}
+@media(min-height:900px){
+  .cw{font-size:2.5rem}.cv{font-size:2.1rem}
+  .btn-lg{width:70px;height:70px;font-size:1.7rem}
+  .ctrl-wrap{gap:1.3rem;padding:1rem 0 .4rem}
+}
+@media(min-width:768px){
+  .btn:hover{transform:scale(1.08);box-shadow:0 4px 16px rgba(0,0,0,.1)}
+  .btn.g:hover{background:var(--green);color:#fff}
+  .btn.r:hover{background:var(--red);color:#fff}
+  .btn.b:hover{background:var(--accent);color:#fff}
+}
+
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#1c1c1e;--glass:rgba(58,58,60,0.65);--glass2:rgba(68,68,70,0.75);
+    --text:#f5f5f7;--text2:#98989f;--accent:#0a84ff;--red:#ff453a;--green:#30d158;
+    --sh:0 2px 16px rgba(0,0,0,0.25),0 0 1px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,255,255,0.08);
+    --sh2:0 8px 32px rgba(0,0,0,0.35),0 2px 8px rgba(0,0,0,0.2),inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  body{background:var(--bg)}
+  .hdr{background:var(--glass2);border-bottom:.5px solid rgba(255,255,255,0.1)}
+  .cf{background:var(--glass2)}
+  .si{background:var(--glass);color:var(--text)}
+  .file-select{background-color:var(--glass);color:var(--text);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2398989f' stroke-width='1.5' fill='none'/%3E%3C/svg%3E")}
+  .file-select option{background:#2c2c2e;color:var(--text)}
+  .upload-btn{background:var(--glass);color:var(--text2)}
+  .sp{background:var(--glass)}
+  .fp{background:var(--glass);color:var(--text2)}
+  .fp.on{background:var(--accent);color:#fff}
+  .chip-add{border-color:rgba(255,255,255,0.15);color:var(--text2)}
+  .btn{background:var(--glass2)}
+  .rp{background:rgba(255,69,58,0.15);color:var(--red)}
+  .pw{background:rgba(255,255,255,0.08)}
+  .ct{color:var(--red)}
+  .cb .ct{color:var(--red)}
+  .welcome-ico{background:var(--glass2)}
+}
+
+.fc-wrap{position:relative;overflow:visible}
+.fc.no-transition{transition:none!important}
+.card-enter{animation:cardEnter .25s ease forwards}
+@keyframes cardEnter{from{transform:scale(.9);opacity:0}to{transform:none;opacity:1}}
+
+.nav-above{display:flex;align-items:center;justify-content:center;gap:.8rem;padding:.2rem 0 .4rem;flex-shrink:0}
+.nav-above .cc{margin:0;min-width:60px;text-align:center}
 </style>
 </head>
 <body>
 <div class="shell">
-<div class="bar"><h1>🇵🇱 Польські картки</h1></div>
-<div class="chips" id="chipBar"><span class="chip-load" id="chipLoading">Завантаження...</span><input type="file" class="file-input" id="fileInput" accept=".json"></div>
+
+<div class="hdr"><h1>🇵🇱 Польські картки</h1></div>
+
+<div class="sel-bar" id="selBar">
+  <select class="file-select" id="fileSelect"><option value="">Завантаження...</option></select>
+  <button class="upload-btn" id="uploadBtn">＋</button>
+  <input type="file" class="file-input" id="fileInput" accept=".json">
+</div>
+
 <div id="welcomeState" class="welcome">
-<div class="welcome-ico">🇵🇱</div>
-<h2>Вивчай польські слова</h2>
-<p>Обери набір слів вгорі — і почни вчити з флешкартками та вимовою</p>
-<div class="welcome-hint"><span class="bounce">↑</span> Обери набір</div>
+  <div class="welcome-ico">🇵🇱</div>
+  <h2>Вивчай польські слова</h2>
+  <p>Обери набір слів вгорі — і почни вчити з флешкартками та вимовою</p>
+  <div class="whint"><span class="bounce">↑</span> Обери набір</div>
 </div>
-<div id="appMain" class="hid" style="display:none;flex-direction:column;flex:1;min-height:0;">
-<div class="stats"><div class="sp g"><span class="n" id="knownCount">0</span><span class="l">вивчено</span></div><div class="sp r"><span class="n" id="leftCount">0</span><span class="l">лишилось</span></div><div class="sp"><span class="n" id="totalCount">0</span><span class="l">всього</span></div></div>
-<div class="pw"><div class="pf" id="progressBar" style="width:0%"></div></div>
-<div class="tb"><input type="text" class="si" id="searchInput" placeholder="Пошук слова..."><div class="fr"><button class="fp on" data-filter="all">Усі</button><button class="fp" data-filter="new">Нові</button><button class="fp" data-filter="known">Вивчені</button></div></div>
-<div class="ca" id="cardArea"><div class="cc" id="cardCounter"></div><div class="fc" id="flashcardContainer"><div class="fl" id="flashcard"><div class="cf"><div class="cw" id="frontWord"></div><div class="ct" id="frontTranscript"></div><div class="ch">натисни → переклад</div></div><div class="cf cb"><div class="cv" id="backTranslation"></div><div class="cw" id="backWord"></div><div class="ct" id="backTranscript"></div></div></div></div></div>
-<div id="controls" style="flex-shrink:0;padding:0;margin-top:-.8rem;display:flex;flex-direction:column;align-items:center;gap:1.5rem"><div class="ctrls" style="padding:0"><button class="btn r" id="btnSkip" style="width:60px;height:60px;font-size:1.4rem">✗</button><button class="btn g" id="btnKnow" style="width:60px;height:60px;font-size:1.4rem">✓</button></div><div class="ctrls" style="padding:0;gap:.6rem"><button class="btn m" id="btnPrev" style="width:42px;height:42px;font-size:.95rem">◀</button><button class="btn b" id="btnSpeak" style="width:42px;height:42px;font-size:1.1rem">🔊</button><button class="btn" id="btnNext" style="width:42px;height:42px;font-size:.95rem;color:var(--text)">▶</button></div></div>
-<div class="kh"><kbd class="kk">←</kbd> назад <kbd class="kk">Пробіл</kbd> перевернути <kbd class="kk">→</kbd> далі <kbd class="kk">Enter</kbd> знаю <kbd class="kk">S</kbd> вимова</div>
-<div class="bb"><button class="rp" id="resetBtn">Скинути прогрес</button></div>
+
+<div id="appMain" class="hid" style="display:none;flex-direction:column;flex:1;min-height:0">
+
+  <div class="stats">
+    <div class="sp g"><span class="n" id="knownCount">0</span><span class="l">вивчено</span></div>
+    <div class="sp r"><span class="n" id="leftCount">0</span><span class="l">лишилось</span></div>
+    <div class="sp"><span class="n" id="totalCount">0</span><span class="l">всього</span></div>
+  </div>
+  <div class="pw"><div class="pf" id="progressBar" style="width:0%"></div></div>
+
+  <div class="tb">
+    
+    <div class="fr">
+      <button class="fp on" data-filter="all">Усі</button>
+      <button class="fp" data-filter="new">Нові</button>
+      <button class="fp" data-filter="known">Вивчені</button>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="nav-above">
+      <button class="btn btn-sm m" id="btnPrev">◀</button>
+      <div class="cc" id="cardCounter"></div>
+      <button class="btn btn-sm b" id="btnSpeak">🔊</button>
+      <button class="btn btn-sm m" id="btnNext">▶</button>
+    </div>
+    <div class="fc-wrap" id="flashcardContainer">
+      <div class="fc" id="flashcard">
+        <div class="cf"><div class="cw" id="frontWord"></div><div class="ct" id="frontTranscript"></div><div class="ch">натисни → переклад</div></div>
+        <div class="cf cb"><div class="cv" id="backTranslation"></div><div class="cw" id="backWord"></div><div class="ct" id="backTranscript"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ctrl-wrap" id="controls">
+    <div class="action-row">
+      <button class="btn btn-lg r" id="btnSkip">✗</button>
+      <button class="btn btn-lg g" id="btnKnow">✓</button>
+    </div>
+  </div>
+
+  <div class="bb"><button class="rp" id="resetBtn">Скинути прогрес</button></div>
 </div>
+
 </div>
+
 <script>
 let words=[],filteredWords=[],currentFilter='all',currentIndex=0,known=new Set(),needsShuffle=true,activeFileName='';
 const SK='polishCards_known';
 function loadProgress(){try{const s=localStorage.getItem(SK);if(s)known=new Set(JSON.parse(s))}catch(e){}}
 function saveProgress(){try{localStorage.setItem(SK,JSON.stringify([...known]))}catch(e){}}
-async function loadFileList(){const bar=document.getElementById('chipBar'),ld=document.getElementById('chipLoading'),host=location.hostname,path=location.pathname;let files=[];if(host.endsWith('.github.io')){const user=host.replace('.github.io',''),repo=path.split('/').filter(Boolean)[0]||'';try{const r=await fetch('https://api.github.com/repos/'+user+'/'+repo+'/contents/words');if(r.ok){const d=await r.json();files=d.filter(f=>f.name.endsWith('.json')&&f.name!=='index.json').map(f=>({name:f.name.replace('.json',''),url:f.download_url}))}}catch(e){}}if(!files.length){try{const r=await fetch('words/index.json');if(r.ok){const l=await r.json();files=l.map(f=>({name:f.replace('.json',''),url:'words/'+f}))}}catch(e){}}ld.remove();files.forEach(f=>{const b=document.createElement('button');b.className='chip';b.textContent=f.name;b.addEventListener('click',()=>loadRemoteFile(f.url,f.name,b));bar.appendChild(b)});const u=document.createElement('button');u.className='chip-add';u.textContent='＋ Свій';u.addEventListener('click',()=>document.getElementById('fileInput').click());bar.appendChild(u);const last=localStorage.getItem('polishCards_lastFile');if(last){const m=files.find(f=>f.name===last);if(m){const c=[...bar.querySelectorAll('.chip')].find(x=>x.textContent===last);if(c)loadRemoteFile(m.url,m.name,c)}}}
-async function loadRemoteFile(url,name,el){try{const r=await fetch(url);if(!r.ok)return;const d=await r.json();if(!Array.isArray(d)||!d.length||!d[0].id||!d[0].word)return;activateFile(d,name,el)}catch(e){}}
-function handleLocalFile(file){if(!file)return;const r=new FileReader();r.onload=function(e){try{const d=JSON.parse(e.target.result);if(!Array.isArray(d)||!d.length||!d[0].id||!d[0].word||!d[0].translation)return;document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));activateFile(d,file.name.replace('.json',''),null)}catch(er){}};r.readAsText(file)}
-function activateFile(data,name,chipEl){words=data;activeFileName=name;localStorage.setItem('polishCards_lastFile',name);document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));if(chipEl)chipEl.classList.add('on');document.getElementById('welcomeState').classList.add('hid');const app=document.getElementById('appMain');app.classList.remove('hid');app.style.display='flex';currentIndex=0;needsShuffle=true;currentFilter='all';document.querySelectorAll('.fp').forEach(b=>b.classList.remove('on'));document.querySelector('.fp[data-filter="all"]').classList.add('on');document.getElementById('searchInput').value='';updateFilteredWords();renderCard();updateStats()}
+
+let fileList=[];
+async function loadFileList(){
+  const sel=document.getElementById('fileSelect'),host=location.hostname,path=location.pathname;
+  if(host.endsWith('.github.io')){const user=host.replace('.github.io',''),repo=path.split('/').filter(Boolean)[0]||'';try{const r=await fetch('https://api.github.com/repos/'+user+'/'+repo+'/contents/words');if(r.ok){const d=await r.json();fileList=d.filter(f=>f.name.endsWith('.json')&&f.name!=='index.json').map(f=>({name:f.name.replace('.json',''),url:f.download_url}))}}catch(e){}}
+  if(!fileList.length){try{const r=await fetch('words/index.json');if(r.ok){const l=await r.json();fileList=l.map(f=>({name:f.replace('.json',''),url:'words/'+f}))}}catch(e){}}
+  sel.innerHTML='';
+  fileList.forEach((f,i)=>{const o=document.createElement('option');o.value=i;o.textContent=f.name;sel.appendChild(o)});
+  sel.addEventListener('change',function(){const f=fileList[this.value];if(f)loadRemoteFile(f.url,f.name)});
+  const last=localStorage.getItem('polishCards_lastFile');
+  const idx=fileList.findIndex(f=>f.name===last);
+  if(idx>=0){sel.value=idx;loadRemoteFile(fileList[idx].url,fileList[idx].name)}
+  else if(fileList.length){sel.value=0;loadRemoteFile(fileList[0].url,fileList[0].name)}
+}
+
+async function loadRemoteFile(url,name){try{const r=await fetch(url);if(!r.ok)return;const d=await r.json();if(!Array.isArray(d)||!d.length||!d[0].id||!d[0].word)return;activateFile(d,name)}catch(e){}}
+
+function handleLocalFile(file){if(!file)return;const r=new FileReader();r.onload=function(e){try{const d=JSON.parse(e.target.result);if(!Array.isArray(d)||!d.length||!d[0].id||!d[0].word||!d[0].translation)return;document.getElementById('fileSelect').value='';activateFile(d,file.name.replace('.json',''))}catch(er){}};r.readAsText(file)}
+
+function activateFile(data,name){words=data;activeFileName=name;localStorage.setItem('polishCards_lastFile',name);document.getElementById('welcomeState').classList.add('hid');const app=document.getElementById('appMain');app.classList.remove('hid');app.style.display='flex';currentIndex=0;needsShuffle=true;currentFilter='all';document.querySelectorAll('.fp').forEach(b=>b.classList.remove('on'));document.querySelector('.fp[data-filter="all"]').classList.add('on');updateFilteredWords();renderCard();updateStats()}
+
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}}
-function updateFilteredWords(){const q=document.getElementById('searchInput').value.toLowerCase().trim();let l=words.map(w=>({...w}));if(currentFilter==='new')l=l.filter(w=>!known.has(w.id));else if(currentFilter==='known')l=l.filter(w=>known.has(w.id));if(q)l=l.filter(w=>w.word.toLowerCase().includes(q)||w.translation.toLowerCase().includes(q)||(w.transcription&&w.transcription.toLowerCase().includes(q)));if(needsShuffle){shuffle(l);needsShuffle=false}filteredWords=l;if(currentIndex>=filteredWords.length)currentIndex=Math.max(0,filteredWords.length-1)}
+
+function updateFilteredWords(){let l=words.map(w=>({...w}));if(currentFilter==='new')l=l.filter(w=>!known.has(w.id));else if(currentFilter==='known')l=l.filter(w=>known.has(w.id));if(needsShuffle){shuffle(l);needsShuffle=false}filteredWords=l;if(currentIndex>=filteredWords.length)currentIndex=Math.max(0,filteredWords.length-1)}
+
 function renderCard(){const fc=document.getElementById('flashcard');fc.classList.remove('flip');if(!filteredWords.length){document.getElementById('flashcardContainer').style.display='none';document.getElementById('controls').style.display='none';document.getElementById('cardCounter').innerHTML=currentFilter==='known'?'<div class="es"><div class="ej">📚</div><p>Немає вивчених</p></div>':currentFilter==='new'?'<div class="es"><div class="ej">🎉</div><p>Все вивчено!</p></div>':'<div class="es"><div class="ej">🔍</div><p>Не знайдено</p></div>';return}document.getElementById('flashcardContainer').style.display='';document.getElementById('controls').style.display='';const w=filteredWords[currentIndex];document.getElementById('frontWord').textContent=w.word;document.getElementById('frontTranscript').textContent=w.transcription?'['+w.transcription+']':'';document.getElementById('backTranslation').textContent=w.translation;document.getElementById('backWord').textContent=w.word;document.getElementById('backTranscript').textContent=w.transcription?'['+w.transcription+']':'';document.getElementById('cardCounter').textContent=(currentIndex+1)+' / '+filteredWords.length}
+
 function flipCard(){document.getElementById('flashcard').classList.toggle('flip')}
 function nextOnly(){if(!filteredWords.length)return;currentIndex=(currentIndex+1)%filteredWords.length;renderCard()}
+
 function nextCard(){if(!filteredWords.length)return;const w=filteredWords[currentIndex];if(currentFilter==='known'){known.delete(w.id);saveProgress();updateStats();filteredWords.splice(currentIndex,1);if(!filteredWords.length)currentIndex=0;else if(currentIndex>=filteredWords.length)currentIndex=0}else if(currentFilter==='all'&&known.has(w.id)){known.delete(w.id);saveProgress();updateStats();currentIndex=(currentIndex+1)%filteredWords.length}else{currentIndex=(currentIndex+1)%filteredWords.length}renderCard()}
+
 function prevCard(){if(!filteredWords.length)return;currentIndex=(currentIndex-1+filteredWords.length)%filteredWords.length;renderCard()}
+
 function markKnown(){if(!filteredWords.length)return;const w=filteredWords[currentIndex];if(currentFilter==='known'){currentIndex=(currentIndex+1)%filteredWords.length}else{const was=known.has(w.id);was?known.delete(w.id):known.add(w.id);saveProgress();updateStats();if(!was&&currentFilter==='new'){filteredWords.splice(currentIndex,1);if(!filteredWords.length)currentIndex=0;else if(currentIndex>=filteredWords.length)currentIndex=0}else{currentIndex=(currentIndex+1)%filteredWords.length}}renderCard()}
+
 function updateStats(){const t=words.length,k=words.filter(w=>known.has(w.id)).length;document.getElementById('knownCount').textContent=k;document.getElementById('leftCount').textContent=t-k;document.getElementById('totalCount').textContent=t;document.getElementById('progressBar').style.width=t?(k/t*100).toFixed(1)+'%':'0%'}
+
 function resetProgress(){known.clear();saveProgress();currentIndex=0;needsShuffle=true;updateFilteredWords();renderCard();updateStats()}
+
 function speak(t){if(!window.speechSynthesis)return;window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='pl-PL';u.rate=0.85;const v=window.speechSynthesis.getVoices(),p=v.find(x=>x.lang.startsWith('pl'));if(p)u.voice=p;window.speechSynthesis.speak(u)}
 function speakCurrent(){if(filteredWords.length)speak(filteredWords[currentIndex].word)}
-function init(){loadProgress();loadFileList();document.getElementById('fileInput').addEventListener('change',function(){if(this.files[0])handleLocalFile(this.files[0])});document.getElementById('searchInput').addEventListener('input',function(){currentIndex=0;needsShuffle=true;updateFilteredWords();renderCard()});document.querySelectorAll('.fp').forEach(b=>{b.addEventListener('click',function(){document.querySelectorAll('.fp').forEach(x=>x.classList.remove('on'));this.classList.add('on');currentFilter=this.dataset.filter;currentIndex=0;needsShuffle=true;updateFilteredWords();renderCard()})});document.getElementById('btnPrev').addEventListener('click',prevCard);document.getElementById('btnSpeak').addEventListener('click',speakCurrent);document.getElementById('btnNext').addEventListener('click',nextOnly);document.getElementById('btnSkip').addEventListener('click',nextCard);document.getElementById('btnKnow').addEventListener('click',markKnown);document.addEventListener('keydown',function(e){if(e.target.tagName==='INPUT')return;if(e.code==='Space'||e.code==='ArrowUp'||e.code==='ArrowDown'){e.preventDefault();flipCard()}else if(e.code==='ArrowRight')nextOnly();else if(e.code==='ArrowLeft')prevCard();else if(e.code==='Enter')markKnown();else if(e.code==='KeyS')speakCurrent()});const rb=document.getElementById('resetBtn');let rp=false;rb.addEventListener('click',function(){if(!rp){rp=true;this.textContent='Точно? Ще раз';this.style.background='var(--red)';this.style.color='#fff';setTimeout(()=>{rp=false;this.textContent='Скинути прогрес';this.style.background='';this.style.color=''},3000)}else{resetProgress();rp=false;this.textContent='Скинуто!';this.style.background='var(--green)';this.style.color='#fff';setTimeout(()=>{this.textContent='Скинути прогрес';this.style.background='';this.style.color=''},1500)}});if(window.speechSynthesis){window.speechSynthesis.getVoices();window.speechSynthesis.onvoiceschanged=()=>window.speechSynthesis.getVoices()}let tx=0,sw=false;const cc=document.getElementById('flashcardContainer');cc.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;sw=false},{passive:true});cc.addEventListener('touchmove',e=>{if(Math.abs(e.touches[0].clientX-tx)>20)sw=true},{passive:true});cc.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50){d>0?prevCard():nextCard()}},{passive:true});cc.addEventListener('click',()=>{if(!sw)flipCard();sw=false})}
+
+function init(){
+  loadProgress();loadFileList();
+  document.getElementById('uploadBtn').addEventListener('click',()=>document.getElementById('fileInput').click());document.getElementById('fileInput').addEventListener('change',function(){if(this.files[0])handleLocalFile(this.files[0])});
+  
+  document.querySelectorAll('.fp').forEach(b=>{b.addEventListener('click',function(){document.querySelectorAll('.fp').forEach(x=>x.classList.remove('on'));this.classList.add('on');currentFilter=this.dataset.filter;currentIndex=0;needsShuffle=true;updateFilteredWords();renderCard()})});
+  document.getElementById('btnPrev').addEventListener('click',prevCard);
+  document.getElementById('btnSpeak').addEventListener('click',speakCurrent);
+  document.getElementById('btnNext').addEventListener('click',nextOnly);
+  document.getElementById('btnSkip').addEventListener('click',nextCard);
+  document.getElementById('btnKnow').addEventListener('click',markKnown);
+  document.addEventListener('keydown',function(e){if(e.target.tagName==='INPUT')return;if(e.code==='Space'||e.code==='ArrowUp'||e.code==='ArrowDown'){e.preventDefault();flipCard()}else if(e.code==='ArrowRight')nextOnly();else if(e.code==='ArrowLeft')prevCard();else if(e.code==='Enter')markKnown();else if(e.code==='KeyS')speakCurrent()});
+  const rb=document.getElementById('resetBtn');let rp=false;
+  rb.addEventListener('click',function(){if(!rp){rp=true;this.textContent='Точно? Ще раз';this.style.background='var(--red)';this.style.color='#fff';setTimeout(()=>{rp=false;this.textContent='Скинути прогрес';this.style.background='';this.style.color=''},3000)}else{resetProgress();rp=false;this.textContent='Скинуто!';this.style.background='var(--green)';this.style.color='#fff';setTimeout(()=>{this.textContent='Скинути прогрес';this.style.background='';this.style.color=''},1500)}});
+  if(window.speechSynthesis){window.speechSynthesis.getVoices();window.speechSynthesis.onvoiceschanged=()=>window.speechSynthesis.getVoices()}
+  let tx=0,sw=false,dragging=false,swiping=false;
+  const cc=document.getElementById('flashcardContainer');
+
+  function getFC(){return document.getElementById('flashcard')}
+
+  function swipeOut(dir,cb){
+    swiping=true;
+    const fc=getFC();
+    const x=dir<0?-1.2:1.2;
+    const r=dir<0?-12:12;
+    fc.style.transition='transform .3s ease, opacity .3s ease';
+    fc.style.transform='translateX('+x*window.innerWidth*.5+'px) rotate('+r+'deg)';
+    fc.style.opacity='0';
+    setTimeout(()=>{
+      fc.style.transition='none';
+      fc.style.transform='';fc.style.opacity='';
+      cb();
+      void fc.offsetWidth;
+      fc.classList.add('card-enter');
+      setTimeout(()=>{fc.classList.remove('card-enter');swiping=false},250);
+    },300);
+  }
+
+  cc.addEventListener('touchstart',e=>{
+    if(swiping)return;
+    tx=e.touches[0].clientX;sw=false;dragging=true;
+    const fc=getFC();fc.classList.add('no-transition');
+  },{passive:true});
+
+  cc.addEventListener('touchmove',e=>{
+    if(!dragging||swiping)return;
+    const dx=e.touches[0].clientX-tx;
+    if(Math.abs(dx)>15)sw=true;
+    if(sw){
+      const fc=getFC();
+      const rot=dx*0.06;
+      const op=Math.max(0.4,1-Math.abs(dx)/350);
+      const base=fc.classList.contains('flip')?'rotateY(180deg) ':'';
+      fc.style.transform=base+'translateX('+dx+'px) rotate('+rot+'deg)';
+      fc.style.opacity=op;
+    }
+  },{passive:true});
+
+  cc.addEventListener('touchend',e=>{
+    if(!dragging||swiping)return;
+    dragging=false;
+    const fc=getFC();
+    fc.classList.remove('no-transition');
+    const dx=e.changedTouches[0].clientX-tx;
+
+    if(Math.abs(dx)>80){
+      const dir=dx<0?-1:1;
+      fc.style.transition='transform .3s ease, opacity .3s ease';
+      fc.style.transform='translateX('+(dir*window.innerWidth*.6)+'px) rotate('+(dir*12)+'deg)';
+      fc.style.opacity='0';
+      setTimeout(()=>{
+        fc.style.transition='none';
+        fc.style.transform='';fc.style.opacity='';
+        if(dir<0)nextOnly();else prevCard();
+        void fc.offsetWidth;
+        fc.classList.add('card-enter');
+        setTimeout(()=>{fc.classList.remove('card-enter');swiping=false},250);
+      },280);
+      swiping=true;
+    }else{
+      const base=fc.classList.contains('flip')?'rotateY(180deg)':'';
+      fc.style.transition='transform .2s ease, opacity .2s ease';
+      fc.style.transform=base;
+      fc.style.opacity='1';
+      setTimeout(()=>{fc.style.transition='';fc.style.transform=base||''},200);
+    }
+  },{passive:true});
+
+  cc.addEventListener('click',e=>{
+    if(sw||swiping){sw=false;return}
+    flipCard();
+  });
+}
 document.addEventListener('DOMContentLoaded',init);
 if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{});}
 </script>
