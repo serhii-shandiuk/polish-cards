@@ -27,11 +27,11 @@ body{font-family:'Inter',-apple-system,system-ui,sans-serif;background:var(--bg)
 .shell{display:flex;flex-direction:column;height:100dvh;height:100%;padding-top:var(--safe-t);padding-bottom:var(--safe-b)}
 
 /* === HEADER === */
-.hdr{display:flex;align-items:center;justify-content:center;padding:.5rem .8rem;background:var(--glass2);backdrop-filter:blur(var(--blur));-webkit-backdrop-filter:blur(var(--blur));border-bottom:.5px solid rgba(255,255,255,.45);flex-shrink:0}
+.hdr{display:flex;align-items:center;justify-content:center;padding:.6rem .8rem;background:var(--glass2);backdrop-filter:blur(var(--blur));-webkit-backdrop-filter:blur(var(--blur));border-bottom:.5px solid rgba(255,255,255,.45);flex-shrink:0}
 .hdr h1{font-size:1.05rem;font-weight:700;letter-spacing:-.02em}
 
 /* === CHIPS === */
-.sel-bar{display:flex;align-items:center;gap:.5rem;padding:.45rem .8rem;flex-shrink:0}
+.sel-bar{display:flex;align-items:center;gap:.5rem;padding:.55rem .8rem;flex-shrink:0}
 
 
 
@@ -56,12 +56,12 @@ body{font-family:'Inter',-apple-system,system-ui,sans-serif;background:var(--bg)
 @keyframes bu{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
 
 /* === STATS === */
-.stats{display:flex;justify-content:center;gap:.4rem;padding:.3rem .8rem;flex-shrink:0}
+.stats{display:flex;justify-content:center;gap:.5rem;padding:.5rem .8rem;flex-shrink:0}
 .sp{display:flex;align-items:center;gap:.25rem;padding:.25rem .6rem;background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:var(--pill);box-shadow:var(--sh);font-size:.75rem}
 .sp .n{font-weight:700;font-size:.85rem}
 .sp .l{color:var(--text2);font-size:.68rem}
 .sp.g .n{color:var(--green)}.sp.r .n{color:var(--red)}
-.pw{height:3px;background:rgba(0,0,0,.06);flex-shrink:0;margin:0 .8rem;border-radius:2px}
+.pw{height:3px;background:rgba(0,0,0,.06);flex-shrink:0;margin:.15rem .8rem;border-radius:2px}
 .pf{height:100%;background:var(--green);transition:width .4s;border-radius:2px}
 
 /* === TOOLBAR === */
@@ -76,7 +76,7 @@ body{font-family:'Inter',-apple-system,system-ui,sans-serif;background:var(--bg)
 /* === MAIN CONTENT: card + controls === */
 .main-content{flex:1;display:flex;flex-direction:column;align-items:center;padding:.2rem 1rem 0;min-height:0;overflow:hidden}
 
-.cc{font-size:.72rem;color:var(--text2);font-weight:500;margin-bottom:.3rem}
+.cc{font-size:.72rem;color:var(--text2);font-weight:500;padding:.3rem 0}
 
 /* === FLASHCARD === */
 .fc-wrap{perspective:1000px;width:100%;max-width:400px;flex:1;min-height:0;touch-action:pan-x}
@@ -107,7 +107,7 @@ body{font-family:'Inter',-apple-system,system-ui,sans-serif;background:var(--bg)
 .btn.m{color:var(--text2)}
 
 /* === BOTTOM === */
-.bb{display:flex;align-items:center;justify-content:center;padding:.8rem .8rem 1rem;flex-shrink:0}
+.bb{display:flex;align-items:center;justify-content:center;padding:.6rem .8rem;flex-shrink:0;margin-top:auto}
 .rp{padding:.3rem .8rem;border:none;border-radius:var(--pill);background:rgba(255,59,48,.1);color:var(--red);font-family:inherit;font-size:.72rem;font-weight:600;-webkit-appearance:none;touch-action:manipulation}
 .rp:active{background:var(--red);color:#fff}
 
@@ -165,8 +165,8 @@ body{font-family:'Inter',-apple-system,system-ui,sans-serif;background:var(--bg)
 .card-enter{animation:cardEnter .25s ease forwards}
 @keyframes cardEnter{from{transform:scale(.9);opacity:0}to{transform:none;opacity:1}}
 
-.nav-above{display:flex;align-items:center;justify-content:center;gap:.8rem;padding:.2rem 0 .4rem;flex-shrink:0}
-.nav-above .cc{margin:0;min-width:60px;text-align:center}
+
+
 </style>
 </head>
 <body>
@@ -206,12 +206,7 @@ body{font-family:'Inter',-apple-system,system-ui,sans-serif;background:var(--bg)
   </div>
 
   <div class="main-content">
-    <div class="nav-above">
-      <button class="btn btn-sm m" id="btnPrev">◀</button>
-      <div class="cc" id="cardCounter"></div>
-      <button class="btn btn-sm b" id="btnSpeak">🔊</button>
-      <button class="btn btn-sm m" id="btnNext">▶</button>
-    </div>
+    <div class="cc" id="cardCounter" style="text-align:center;width:100%"></div>
     <div class="fc-wrap" id="flashcardContainer">
       <div class="fc" id="flashcard">
         <div class="cf"><div class="cw" id="frontWord"></div><div class="ct" id="frontTranscript"></div><div class="ch">натисни → переклад</div></div>
@@ -223,6 +218,7 @@ body{font-family:'Inter',-apple-system,system-ui,sans-serif;background:var(--bg)
   <div class="ctrl-wrap" id="controls">
     <div class="action-row">
       <button class="btn btn-lg r" id="btnSkip">✗</button>
+      <button class="btn btn-sm b" id="btnSpeak">🔊</button>
       <button class="btn btn-lg g" id="btnKnow">✓</button>
     </div>
   </div>
@@ -285,9 +281,9 @@ function init(){
   document.getElementById('uploadBtn').addEventListener('click',()=>document.getElementById('fileInput').click());document.getElementById('fileInput').addEventListener('change',function(){if(this.files[0])handleLocalFile(this.files[0])});
   
   document.querySelectorAll('.fp').forEach(b=>{b.addEventListener('click',function(){document.querySelectorAll('.fp').forEach(x=>x.classList.remove('on'));this.classList.add('on');currentFilter=this.dataset.filter;currentIndex=0;needsShuffle=true;updateFilteredWords();renderCard()})});
-  document.getElementById('btnPrev').addEventListener('click',prevCard);
+  
   document.getElementById('btnSpeak').addEventListener('click',speakCurrent);
-  document.getElementById('btnNext').addEventListener('click',nextOnly);
+  
   document.getElementById('btnSkip').addEventListener('click',nextCard);
   document.getElementById('btnKnow').addEventListener('click',markKnown);
   document.addEventListener('keydown',function(e){if(e.target.tagName==='INPUT')return;if(e.code==='Space'||e.code==='ArrowUp'||e.code==='ArrowDown'){e.preventDefault();flipCard()}else if(e.code==='ArrowRight')nextOnly();else if(e.code==='ArrowLeft')prevCard();else if(e.code==='Enter')markKnown();else if(e.code==='KeyS')speakCurrent()});
