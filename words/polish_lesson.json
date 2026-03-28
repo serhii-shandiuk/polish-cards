@@ -1390,5 +1390,371 @@
     "word": "śpię",
     "transcription": "шьпє",
     "translation": "я сплю"
+  },
+  {
+    "id": "035a938c",
+    "word": "bardzo",
+    "transcription": "бардзо",
+    "translation": "дуже"
+  },
+  {
+    "id": "b5d75836",
+    "word": "chętnie",
+    "transcription": "хентнє",
+    "translation": "залюбки"
+  },
+  {
+    "id": "4d264b00",
+    "word": "chodzę",
+    "transcription": "ходзе",
+    "translation": "я ходжу"
+  },
+  {
+    "id": "aace8446",
+    "word": "ciebie",
+    "transcription": "чєбє",
+    "translation": "тебе"
+  },
+  {
+    "id": "9e363471",
+    "word": "cię",
+    "transcription": "чє",
+    "translation": "тебе (коротка)"
+  },
+  {
+    "id": "9a2e4862",
+    "word": "czekam",
+    "transcription": "чекам",
+    "translation": "я чекаю"
+  },
+  {
+    "id": "5ca2aa84",
+    "word": "da",
+    "transcription": "да",
+    "translation": "дасть"
+  },
+  {
+    "id": "4c85d635",
+    "word": "darmowy",
+    "transcription": "дармови",
+    "translation": "безкоштовний"
+  },
+  {
+    "id": "8cfb9b64",
+    "word": "dawna",
+    "transcription": "давна",
+    "translation": "давно (od dawna)"
+  },
+  {
+    "id": "8251e211",
+    "word": "dobrego",
+    "transcription": "добреґо",
+    "translation": "доброго"
+  },
+  {
+    "id": "5b824517",
+    "word": "dziewczynę",
+    "transcription": "дзєвчине",
+    "translation": "дівчину"
+  },
+  {
+    "id": "dbafccde",
+    "word": "filmiki",
+    "transcription": "філмікі",
+    "translation": "відео, ролики"
+  },
+  {
+    "id": "865c0c0b",
+    "word": "i",
+    "transcription": "і",
+    "translation": "і, та"
+  },
+  {
+    "id": "f9463758",
+    "word": "jakieś",
+    "transcription": "якєшь",
+    "translation": "якісь"
+  },
+  {
+    "id": "08a2a5e8",
+    "word": "ją",
+    "transcription": "йон",
+    "translation": "її"
+  },
+  {
+    "id": "8fba8da1",
+    "word": "kiedy",
+    "transcription": "кєди",
+    "translation": "коли"
+  },
+  {
+    "id": "0321901d",
+    "word": "kupić",
+    "transcription": "купічь",
+    "translation": "купити"
+  },
+  {
+    "id": "2a304a13",
+    "word": "link",
+    "transcription": "лінк",
+    "translation": "посилання"
+  },
+  {
+    "id": "26250839",
+    "word": "lubię",
+    "transcription": "любє",
+    "translation": "я люблю"
+  },
+  {
+    "id": "b74df323",
+    "word": "ma",
+    "transcription": "ма",
+    "translation": "має"
+  },
+  {
+    "id": "be1ee5f5",
+    "word": "miło",
+    "transcription": "міво",
+    "translation": "приємно"
+  },
+  {
+    "id": "4484843d",
+    "word": "moje",
+    "transcription": "моє",
+    "translation": "моє, мої"
+  },
+  {
+    "id": "5594a7b4",
+    "word": "może",
+    "transcription": "може",
+    "translation": "може"
+  },
+  {
+    "id": "5e4c4b16",
+    "word": "nagrywać",
+    "transcription": "наґривачь",
+    "translation": "записувати, знімати"
+  },
+  {
+    "id": "22c78aad",
+    "word": "nam",
+    "transcription": "нам",
+    "translation": "нам"
+  },
+  {
+    "id": "d1725e8d",
+    "word": "oczywiście",
+    "transcription": "очивішьчє",
+    "translation": "звичайно"
+  },
+  {
+    "id": "afc7e8a9",
+    "word": "od",
+    "transcription": "од",
+    "translation": "від"
+  },
+  {
+    "id": "f52207e4",
+    "word": "oglądać",
+    "transcription": "оґлондачь",
+    "translation": "дивитися"
+  },
+  {
+    "id": "a73bcb77",
+    "word": "oglądam",
+    "transcription": "оґлондам",
+    "translation": "я дивлюся"
+  },
+  {
+    "id": "f96c40cc",
+    "word": "oglądasz",
+    "transcription": "оґлондаш",
+    "translation": "ти дивишся"
+  },
+  {
+    "id": "24a30eee",
+    "word": "owszem",
+    "transcription": "овшем",
+    "translation": "так, саме так"
+  },
+  {
+    "id": "f6122c97",
+    "word": "po",
+    "transcription": "по",
+    "translation": "по, після"
+  },
+  {
+    "id": "b5a1217d",
+    "word": "podkasty",
+    "transcription": "подкасти",
+    "translation": "подкасти"
+  },
+  {
+    "id": "ef977e1e",
+    "word": "poznać",
+    "transcription": "позначь",
+    "translation": "познайомитися"
+  },
+  {
+    "id": "6b122106",
+    "word": "przyjdę",
+    "transcription": "пшийде",
+    "translation": "я прийду"
+  },
+  {
+    "id": "c9b7031b",
+    "word": "przystojny",
+    "transcription": "пшистойни",
+    "translation": "вродливий"
+  },
+  {
+    "id": "09997ee4",
+    "word": "pójdziemy",
+    "transcription": "пуйдзємі",
+    "translation": "ми підемо"
+  },
+  {
+    "id": "8959fe4a",
+    "word": "randka",
+    "transcription": "рандка",
+    "translation": "побачення"
+  },
+  {
+    "id": "de9ef5bf",
+    "word": "razy",
+    "transcription": "рази",
+    "translation": "рази"
+  },
+  {
+    "id": "fc782d6d",
+    "word": "siłownię",
+    "transcription": "сіловнє",
+    "translation": "спортзал"
+  },
+  {
+    "id": "055d7912",
+    "word": "skąd",
+    "transcription": "сконд",
+    "translation": "звідки"
+  },
+  {
+    "id": "0fe6df8f",
+    "word": "sklepu",
+    "transcription": "склепу",
+    "translation": "магазину"
+  },
+  {
+    "id": "7ad0e314",
+    "word": "słuchasz",
+    "transcription": "свухаш",
+    "translation": "ти слухаєш"
+  },
+  {
+    "id": "dddd37df",
+    "word": "spacer",
+    "transcription": "спацер",
+    "translation": "прогулянка"
+  },
+  {
+    "id": "777769a5",
+    "word": "świetne",
+    "transcription": "шьвєтне",
+    "translation": "чудово"
+  },
+  {
+    "id": "15a957ee",
+    "word": "telefon",
+    "transcription": "телефон",
+    "translation": "телефон"
+  },
+  {
+    "id": "09a9d695",
+    "word": "tiktoka",
+    "transcription": "тіктока",
+    "translation": "тікток"
+  },
+  {
+    "id": "f8bb9cef",
+    "word": "twoje",
+    "transcription": "твоє",
+    "translation": "твоє, твої"
+  },
+  {
+    "id": "b2c19cb3",
+    "word": "tydzień",
+    "transcription": "тидзєнь",
+    "translation": "тиждень"
+  },
+  {
+    "id": "1cdf617e",
+    "word": "wejść",
+    "transcription": "вейшьчь",
+    "translation": "ввійти"
+  },
+  {
+    "id": "a909b5e0",
+    "word": "wszystkiego",
+    "transcription": "вшисткєґо",
+    "translation": "всього"
+  },
+  {
+    "id": "0d7d4ce8",
+    "word": "wychodzisz",
+    "transcription": "виходзіш",
+    "translation": "ти виходиш"
+  },
+  {
+    "id": "b788684d",
+    "word": "wyślę",
+    "transcription": "вишьле",
+    "translation": "я відправлю"
+  },
+  {
+    "id": "a2a53e3a",
+    "word": "YouTubie",
+    "transcription": "ютубє",
+    "translation": "ютубі"
+  },
+  {
+    "id": "98b456a0",
+    "word": "ze",
+    "transcription": "зе",
+    "translation": "з, із"
+  },
+  {
+    "id": "74af7fc2",
+    "word": "znam",
+    "transcription": "знам",
+    "translation": "я знаю (когось)"
+  },
+  {
+    "id": "33ffcc7e",
+    "word": "znamy",
+    "transcription": "знами",
+    "translation": "ми знаємо"
+  },
+  {
+    "id": "cb6dccab",
+    "word": "znacie",
+    "transcription": "значє",
+    "translation": "ви знаєте"
+  },
+  {
+    "id": "af36344d",
+    "word": "znaleźć",
+    "transcription": "зналешьчь",
+    "translation": "знайти"
+  },
+  {
+    "id": "e484e404",
+    "word": "żeby",
+    "transcription": "жеби",
+    "translation": "щоб"
+  },
+  {
+    "id": "714da951",
+    "word": "życzą",
+    "transcription": "жичон",
+    "translation": "бажають"
   }
 ]
